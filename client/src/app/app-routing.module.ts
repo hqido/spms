@@ -1,10 +1,13 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {HomeComponent} from "./home/home.component";
-import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {HomeComponent} from "@app/home/home.component";
+import {PageNotFoundComponent} from "@app/page-not-found/page-not-found.component";
+import {LoginComponent} from "@app/login/login.component";
+import {AuthGuard} from "@app/auth.guard";
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: 'login', component: LoginComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 
