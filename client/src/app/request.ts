@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 @Injectable({
   providedIn: 'root'
 })
-export class RequestService {
+export class Request {
 
   private sever = environment.server;
 
@@ -39,11 +39,11 @@ export class RequestService {
     );
   }
 
-  private handleError(error: HttpErrorResponse, that: RequestService) {
+  private handleError(error: HttpErrorResponse, that: Request) {
     that.alert(error.message);
   }
 
-  private handleSuccessRequest<R>(result: Result<R>, option: RequestOption<R>, that: RequestService): void {
+  private handleSuccessRequest<R>(result: Result<R>, option: RequestOption<R>, that: Request): void {
     // read result code (biz)
     const code: string = result.code;
 
@@ -54,8 +54,8 @@ export class RequestService {
       }
       // jump login page
     } else if (code == 'NOT_LOGIN' || code == 'INVALID_LOGIN') {
+      that.alert("user not login");
       this.router.navigate(['/login']);
-      return;
     } else {
       that.alert(result.message);
     }

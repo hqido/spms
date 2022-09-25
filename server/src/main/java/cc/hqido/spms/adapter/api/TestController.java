@@ -2,6 +2,8 @@ package cc.hqido.spms.adapter.api;
 
 import cc.hqido.spms.adapter.home.Root;
 import cc.hqido.spms.core.ResultBuilderConsts;
+import cc.hqido.spms.core.model.User;
+import cc.hqido.spms.infra.result.DataResult;
 import cc.hqido.spms.infra.result.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +33,15 @@ public class TestController {
     @PostMapping("/invalidLogin")
     public Result invalidLogin() {
         return ResultBuilderConsts.INVALID_LOGIN.r();
+    }
+
+    @GetMapping("/getCurrentUser")
+    public DataResult<User> user() {
+        User user = new User();
+        user.setId(1L);
+        user.setNickName("1231");
+        user.setUsername("123123");
+        return ResultBuilderConsts.SUCCESS.r(user);
     }
 
 }
