@@ -8,13 +8,13 @@ import {HomeComponent} from "@app/home/home.component";
 
 const routes: Routes = [
   {
-    path: '', component: IndexComponent, canActivate: [AuthGuard], children: [
+    path: '', component: IndexComponent, title: "首页", canActivate: [AuthGuard], children: [
       {
         path: 'home', component: HomeComponent
       }
     ]
   },
-  {path: 'login', component: LoginComponent},
+  {path: 'login', component: LoginComponent, title: "登录"},
   {path: '**', component: PageNotFoundComponent}
 ];
 

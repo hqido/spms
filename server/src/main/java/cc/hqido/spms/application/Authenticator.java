@@ -59,6 +59,6 @@ public class Authenticator {
     public void verify(Subject subject) {
         User user = userService.get(subject.getUserId());
 
-        if (user == null || user.getStatus())
+        //if (user == null || user.getStatus())
     }
 }

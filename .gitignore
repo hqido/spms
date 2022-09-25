@@ -141,4 +141,4 @@ testem.log
 .DS_Store
 Thumbs.db
 
-./server/target
+/server/target

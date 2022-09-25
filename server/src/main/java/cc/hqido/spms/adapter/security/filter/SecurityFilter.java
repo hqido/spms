@@ -86,7 +86,7 @@ public class SecurityFilter extends OncePerRequestFilter {
         } catch (Exception e) {
             // ignore jwt verify exception
             if (e instanceof JWTVerificationException) {
-                handleError(ResultBuilderConsts.LOGIN_INVALID, response);
+                handleError(ResultBuilderConsts.INVALID_LOGIN, response);
             } else {
                 Slf4jLogUtils.error(e, LOGGER, "SecurityFilter:doFilterInternal:init");
                 handleError(ResultBuilderConsts.SYSTEM_ERROR, response);

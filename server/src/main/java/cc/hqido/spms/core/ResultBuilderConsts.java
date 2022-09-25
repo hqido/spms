@@ -15,7 +15,7 @@ public class ResultBuilderConsts {
 
     public static final ResultBuilder NOT_LOGIN = new ResultBuilder("NOT_LOGIN", "not login");
 
-    public static final ResultBuilder LOGIN_INVALID = new ResultBuilder("LOGIN_INVALID", "login invalid");
+    public static final ResultBuilder INVALID_LOGIN = new ResultBuilder("INVALID_LOGIN", "invalid login");
 
     public static final ResultBuilder SYSTEM_ERROR = new ResultBuilder("SYSTEM_ERROR", "系统异常-{}");
 

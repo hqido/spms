@@ -63,7 +63,7 @@ public class AuthController {
     public Result getCurrentUser() {
         Long uid = SecurityContext.get(SecurityContext::getSubject)
                 .map(Subject::getUserId)
-                .orElseThrow(ResultBuilderConsts.LOGIN_INVALID::e);
+                .orElseThrow(ResultBuilderConsts.INVALID_LOGIN::e);
 
         User user = userService.get(uid);
 
